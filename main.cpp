@@ -1,6 +1,29 @@
 #include <iostream>
 using namespace std;
 
+void checkTraffic() {
+    bool carLeft, carRight;
+
+    // Look left
+    do {
+        cout << "Look left. Is a car approaching from left? (1 = Yes, 0 = No): ";
+        cin >> carLeft;
+        if (carLeft) {
+            cout << "Wait until road clears...\n";
+        }
+    } while (carLeft);
+
+    // Look right
+    do {
+        cout << "Look right. Is a car approaching from right? (1 = Yes, 0 = No): ";
+        cin >> carRight;
+        if (carRight) {
+            cout << "Wait until road clears...\n";
+        }
+    } while (carRight);
+    cout << "No cars approaching. Safe to cross.\n";
+}
+
 int main() {
     bool footbridge, tunnel, crossing, trafficLight;
     cout << "Person wants to cross the road.\n";
