@@ -24,6 +24,24 @@ void checkTraffic() {
     cout << "No cars approaching. Safe to cross.\n";
 }
 
+void checkLight() {
+    bool lightRed;
+
+    // Wait until light turns red
+    do {
+        cout << "Is the traffic light red? (1 = Yes, 0 = No): ";
+        cin >> lightRed;
+        if (!lightRed) {
+            cout << "Light is green. Wait...\n";
+        }
+    } while (!lightRed);
+
+    cout << "Light is red. Proceed to check traffic.\n";
+
+    // Call traffic check after red light
+    checkTraffic();
+}
+
 int main() {
     bool footbridge, tunnel, crossing, trafficLight;
     cout << "Person wants to cross the road.\n";
